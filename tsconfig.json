@@ -1,0 +1,21 @@
+{
+    // config ts compiler 
+    "compilerOptions": {    
+        "target": "ES2023",         // ESNext the latest js version 
+        "module": "commonjs",       // we are using node js 
+        "strict": true,             // Enable all strict type-checking options.
+        "esModuleInterop": true,     // Emit additional JavaScript to ease support for importing CommonJS modules. This enables allowSyntheticDefaultImports for type compatibility.
+        "resolveJsonModule": true,
+        "types": ["node", "@playwright/test"],
+        "outDir": "dist"
+    },
+    // include our ts scriptis in conversion process ( ts -> js)
+    "include": [
+        "src",
+        "test"  
+    ],
+    // this way js files are already in js format no need to convert them 
+    "exclude": [
+        "node_modules"
+    ]
+}

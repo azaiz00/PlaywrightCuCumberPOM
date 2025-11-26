@@ -1,0 +1,27 @@
+{
+  "name": "plcupom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:bdd:html": "cucumber-js --config ./src/cucumber.js -f json:./test-results/cuReports/json_report.json --format html:./test-results/cuReports/html_report.html",
+    "test:bdd:allure": "cucumber-js --config ./src/cucumber_allure.js --format allure-cucumberjs/reporter",
+    "allure:gen:open": "npm run allure:generate && npm run allure:open",
+    "allure:generate": "allure generate ./allure-results --clean -o ./allure-report",
+    "allure:open": "allure open ./allure-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.2.0",
+    "@faker-js/faker": "^9.9.0",
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^24.10.1",
+    "allure-cucumberjs": "^3.4.2",
+    "dotenv": "^17.2.3",
+    "ts-node": "^10.9.2"
+  }
+}

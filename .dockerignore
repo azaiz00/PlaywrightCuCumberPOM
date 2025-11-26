@@ -1,0 +1,11 @@
+node_modules
+allure-results
+allure-report
+.git
+.gitignore
+.vscode
+.env
+.env.local
+.npm
+npm-debug.log
+Dockerfile
