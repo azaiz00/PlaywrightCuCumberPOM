@@ -32,8 +32,8 @@ jobs:
 
       # 5) Lancer les tests BDD (Cucumber + Playwright)
       - name: Run BDD tests
-        run: npm run test:bdd:html
-        
+        run: npm run test:bdd:allure
+
      # 7) Uploader le rapport HTML Cucumber
       - name: Upload Cucumber HTML report
         if: always()
