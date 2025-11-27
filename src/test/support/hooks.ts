@@ -7,7 +7,7 @@ const env = LoadEnv({ path: './env/.env' })
 
 // create a configuration object for esay access ton env variables 
 const config = {
-  headless: env.parsed?.HEADLESS === 'true',
+  headless: true,//process.env.CI ? : true : env.parsed?.HEADLESS === 'true',
   browser: env.parsed?.UI_AUTOMATION_BROWSER || 'chromium',
   width: parseInt(env.parsed?.BROWSER_WIDTH || '1920'),
   height: parseInt(env.parsed?.BROWSER_HEIGHT || '1080')
