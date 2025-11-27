@@ -32,7 +32,7 @@ jobs:
 
       # 5) Lancer les tests BDD (Cucumber + Playwright)
       - name: Run BDD tests
-        run: npm run test:bdd
+        run: npm run test:bdd:allure
 
       # 6) Générer le rapport Allure (si tu as un script npm prévu)
       - name: Generate Allure report
@@ -61,16 +61,3 @@ jobs:
           if-no-files-found: ignore
           retention-days: 30
 
-     # 8) Uploader les résultats sur xray
-      - name: Import Cucumber results to Xray
-        if: always()
-        uses: mikepenz/xray-action@v3
-        with:
-          username: ${{ secrets.XRAY_CLIENT_ID }}
-          password: ${{ secrets.XRAY_CLIENT_SECRET }}
-          testFormat: "cucumber"
-          testPaths: "reports/cucumber.json"
-          # si tu veux cibler une Test Execution existante :
-          # testExecKey: "QA-123"
-          # ou laisser Xray en créer une dans un projet :
-          projectKey: "QA"
