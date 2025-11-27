@@ -32,7 +32,7 @@ jobs:
 
       # 5) Lancer les tests BDD (Cucumber + Playwright)
       - name: Run BDD tests
-        run: npm run test:bdd:allure
+        run: npm run test:bdd:allure:headless
 
       # 6) Générer le rapport Allure (si tu as un script npm prévu)
       - name: Generate Allure report
