@@ -12,6 +12,7 @@ module.exports = {
     requireModule: ["ts-node/register"],
     format: [
       "allure-cucumberjs/reporter",
+      "progress"
     ],
     formatOptions: {
       resultsDir: "allure-results",      // dossier où Allure va stocker les résultats
