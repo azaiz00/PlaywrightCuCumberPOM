@@ -32,7 +32,17 @@ jobs:
 
       # 5) Lancer les tests BDD (Cucumber + Playwright)
       - name: Run BDD tests
-        run: npm run test:bdd:allure
+        run: npm run test:bdd:html
+        
+     # 7) Uploader le rapport HTML Cucumber
+      - name: Upload Cucumber HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-html-report
+          path: test-results/cuReports/html_report.html
+          if-no-files-found: error      # si tu veux forcer l'erreur si le rapport manque
+          retention-days: 30
 
       # 6) Générer le rapport Allure (si tu as un script npm prévu)
       - name: Generate Allure report
