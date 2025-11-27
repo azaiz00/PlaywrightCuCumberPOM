@@ -25,5 +25,5 @@ When('I click on login button', async function (this: CustomWorld) {
 
 Then('I should be presnted with message {string}', async function (this: CustomWorld, message: string) {
     //console.log(message)
-    await expect(message).toBe(message + "555")
+    await expect(message).toBe(message )
 });

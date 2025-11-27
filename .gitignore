@@ -9,7 +9,5 @@ node_modules/
 /playwright/.cache/
 /playwright/.auth/
 .vscode
-.env
-.env.local
 .npm
 
